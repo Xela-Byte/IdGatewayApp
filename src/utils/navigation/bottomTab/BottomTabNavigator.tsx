@@ -131,17 +131,22 @@ const BottomTabNavigator = () => {
   );
 };
 
-const blacklistScreens = [
+const whiteListScreens = [
   'ExploreScreen',
   'EventsScreen',
   'ChatsScreen',
+  'WalletScreen',
   'NotificationsScreen',
 ];
 
 const getRouteName = (route: any) => {
   const routeName = getFocusedRouteNameFromRoute(route);
 
-  return 'flex';
+  return routeName === undefined
+    ? 'flex'
+    : routeName && whiteListScreens.includes(routeName)
+    ? 'flex'
+    : 'none';
 };
 
 export default BottomTabNavigator;

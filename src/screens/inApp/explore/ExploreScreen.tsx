@@ -9,6 +9,7 @@ import {exploreStyle} from '../../../styles/ExploreStyle';
 import {appColors, sizeBlock} from '../../../styles/UniversalStyle';
 import {ExploreScreenProps} from '../../../types/navigation/ExploreNavigationType';
 import {useTheme} from '@react-navigation/native';
+import Animated from 'react-native-reanimated';
 
 const ExploreScreen = ({navigation}: ExploreScreenProps) => {
   const isFirstUpdate = useSelector(selectFirstUpdate);
@@ -24,11 +25,15 @@ const ExploreScreen = ({navigation}: ExploreScreenProps) => {
                 ? navigation.navigate('GuidelineScreen')
                 : navigation.navigate('ProfileScreen');
             }}>
-            <Image source={LadyEbony} style={exploreStyle.avatar} />
+            <Animated.Image
+              source={LadyEbony}
+              style={exploreStyle.avatar}
+              sharedTransitionTag="profilePhoto"
+            />
           </Pressable>
           <View>
             <CustomText fontType="semiBold" color={appColors.textPrimary}>
-              ID Gateway
+              ID Gateway App
             </CustomText>
           </View>
           <View>

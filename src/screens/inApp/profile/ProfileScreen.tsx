@@ -15,6 +15,7 @@ import CustomText from '../../../components/text/CustomText';
 import {profileStyle} from '../../../styles/ProfileStyle';
 import {appColors, fontSize, sizeBlock} from '../../../styles/UniversalStyle';
 import {ProfileScreenProps} from '../../../types/navigation/ExploreNavigationType';
+import Animated from 'react-native-reanimated';
 
 const ProfileScreen = ({navigation}: ProfileScreenProps) => {
   const progressValue = 15;
@@ -52,7 +53,11 @@ const ProfileScreen = ({navigation}: ProfileScreenProps) => {
             onPress={() => {
               navigation.navigate('VerifyPhotoScreen');
             }}>
-            <Image source={LadyEbony} style={profileStyle.profileImage} />
+            <Animated.Image
+              source={LadyEbony}
+              style={profileStyle.profileImage}
+              sharedTransitionTag="profilePhoto"
+            />
             <View
               style={{
                 transform: [{rotate: '-180deg'}],

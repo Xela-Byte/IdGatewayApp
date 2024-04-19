@@ -34,7 +34,7 @@ const CallScreen = ({navigation}: CallScreenProps) => {
           Kie Kie
         </CustomText>
         <CustomText fontSize={fontSize.small - 4} color={appColors.white}>
-          Calling...
+          Calling...?
         </CustomText>
 
         <LinearGradient
